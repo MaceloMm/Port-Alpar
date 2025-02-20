@@ -28,7 +28,7 @@ html{
 }
 
 body{
-    background-image: url('/static/imgs/background-alpar.webp');
+    background-image: url('../imgs/background-alpar.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -145,31 +145,31 @@ footer{
     flex-direction: row;
 
     #git{
-        background-image: url('/static/imgs/github-icon.png');
+        background-image: url('../imgs/github-icon.png');
         background-size: cover;
         transition: 0.6s ease;
     }
     #git:hover{
         transform: scale(1.1);
-        background-image: url('/static/imgs/github-icon.png') !important;
+        background-image: url('../imgs/github-icon.png') !important;
     }
     #lin{
-        background-image: url('/static/imgs/linkedin-icon.png');
+        background-image: url('../imgs/linkedin-icon.png');
         background-size: cover;
         transition: 0.6s ease;
     }
     #lin:hover{
         transform: scale(1.1);
-        background-image: url('/static/imgs/linkedin-hover.png') !important;
+        background-image: url('../imgs/linkedin-hover.png') !important;
     }
     #insta{
-        background-image: url('/static/imgs/instagram-icon.png');
+        background-image: url('../imgs/instagram-icon.png');
         background-size: cover;
         transition: 0.6s ease;
     }
     #insta:hover{
         transform: scale(1.1);
-        background-image: url('/static/imgs/instagram-hover.png') !important;
+        background-image: url('../imgs/instagram-hover.png') !important;
     }
 }
 
