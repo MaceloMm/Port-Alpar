@@ -21,6 +21,14 @@
 }
 
 
+@keyframes text-change {
+    from{
+        text-shadow: 4px 4px 4px  var(--hover);
+    }to{
+        text-shadow: 4px 4px 4px  var(--hightlitgh);
+    }
+}
+
 /* Tags */
 
 html{
@@ -137,6 +145,7 @@ footer{
         margin-top: 20px;
         color: var(--text-primary);
         padding: 10px;
+        animation: text-change infinite alternate ease-in 3s;
     }
 }
 
@@ -190,7 +199,7 @@ footer{
     background-color: var(--hightlitgh);
     border: 3px solid var(--hover);
     box-shadow: 3px 3px 0px 0px var(--hover);
-    transition: all 0.6s ease-in;
+    transition: all 0.6s ease;
     border-radius: 0.5rem;
 
     .img-project{
@@ -211,12 +220,25 @@ footer{
         display: flex;
         align-items: center;
         justify-content: space-around;
+
+        .icon{
+            transition: scale 0.6s ease;
+        }
+
+        .icon:hover{
+            scale: 1.4;
+        }
         
         p{
             color: black;
             font-weight: bold;
         }
     }
+}
+
+.content:hover .project{
+    opacity: 0.8;
+    scale: 0.9;
 }
 
 .project:hover{
