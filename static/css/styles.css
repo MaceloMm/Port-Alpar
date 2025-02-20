@@ -131,6 +131,18 @@ footer{
     align-items: center;
     justify-content: center;
     height: 700px;
+    flex-direction: column;
+
+    #title{
+        color: var(--text-primary);
+    }
+
+    #text-program{
+        margin-top: 50px;
+        width: 70%;
+        text-align: center;
+        font-size: 18px;
+    }
 }
 
 #projects{
