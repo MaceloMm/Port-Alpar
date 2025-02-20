@@ -1,0 +1,232 @@
+/* Tags Gerais */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+}
+
+:root{
+    --bg-primary: #0A0A0A;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+
+/* Tags */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url('/static/imgs/background-alpar.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header{
+    background-color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+
+    a{
+        margin: 8px;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color 0.6s ease-in-out;
+        font-size: 16px;
+    }
+
+    a:visited{
+        text-decoration: none;
+        color: var(--text-primary);
+    }
+
+    a:hover{
+        color: var(--hightlitgh);
+    }
+}
+
+footer{
+    height: 75px;
+    width: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* IDS */
+
+#sobre-min{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+        color: var(--hightlitgh);
+    }
+
+    span{
+        color: #7AC74F;
+    }
+
+    #retrato{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 70%;
+        justify-content: center;
+
+        img{
+            border-radius: 1rem;
+        }
+        
+        h2{
+            margin-top: 20px;
+        }
+    }
+
+    #about-me{
+        height: 70%;
+        margin-left: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        width: 55%;
+        font-size: 20px;
+
+        h2{
+            margin-bottom: 30px;
+        }
+    }
+}
+
+#alpar-rocket{
+    background-color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+#projects{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+
+    h2{
+        margin-top: 20px;
+        color: var(--text-primary);
+        padding: 10px;
+    }
+}
+
+#container-icons{
+    display: flex;
+    flex-direction: row;
+
+    #git{
+        background-image: url('/static/imgs/github-icon.png');
+        background-size: cover;
+        transition: 0.6s ease;
+    }
+    #git:hover{
+        transform: scale(1.1);
+        background-image: url('/static/imgs/github-hover.png') !important;
+    }
+    #lin{
+        background-image: url('/static/imgs/linkedin-icon.png');
+        background-size: cover;
+        transition: 0.6s ease;
+    }
+    #lin:hover{
+        transform: scale(1.1);
+        background-image: url('/static/imgs/linkedin-hover.png') !important;
+    }
+    #insta{
+        background-image: url('/static/imgs/instagram-icon.png');
+        background-size: cover;
+        transition: 0.6s ease;
+    }
+    #insta:hover{
+        transform: scale(1.1);
+        background-image: url('/static/imgs/instagram-hover.png') !important;
+    }
+}
+
+/* Classes */
+
+.content{
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.project{
+    width: 250px;
+    height: 150px;
+    background-color: var(--hightlitgh);
+    border: 3px solid var(--hover);
+    box-shadow: 3px 3px 0px 0px var(--hover);
+    transition: all 0.6s ease-in;
+    border-radius: 0.5rem;
+
+    .img-project{
+        height: 70%;
+        width: 100%;
+        border-bottom: var(--border-color) 3px solid;
+        cursor: pointer;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .desc-project{
+        height: 30%;
+        width: 100%;
+        background-color: var(--hightlitgh);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        p{
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
+.project:hover{
+    scale: 1.1 !important;
+    opacity: 1 !important;
+}
+
+.icon{
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    cursor: pointer;
+}
