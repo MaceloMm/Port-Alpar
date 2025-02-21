@@ -200,24 +200,25 @@ footer{
     margin-top: 75px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-rows: repeat(2, 200px);
     gap: 25px;
     margin-bottom: 20px;
 }
 
 .project{
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     background-color: var(--hightlitgh);
-    border: 3px solid var(--hover);
-    box-shadow: 3px 3px 0px 0px var(--hover);
-    transition: all 0.6s ease;
-    border-radius: 0.5rem;
+    box-shadow: 3px 3px 0px 0px black;
+    transition: all 0.6s ease, box-shadow 0.3s ease-in-out;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 10px 20px rgba(0, 0, 0, 0.15), 
+                0 20px 40px rgba(0, 0, 0, 0.2);
 
     .img-project{
         height: 70%;
         width: 100%;
-        border-bottom: var(--border-color) 3px solid;
         cursor: pointer;
         img{
             height: 100%;
@@ -228,10 +229,11 @@ footer{
     .desc-project{
         height: 30%;
         width: 100%;
-        background-color: var(--hightlitgh);
+        background-color: var(--border-color);
         display: flex;
         align-items: center;
         justify-content: space-around;
+        border: var(--bg-primary) 2px solid;
 
         .icon{
             transition: scale 0.6s ease;
@@ -242,7 +244,7 @@ footer{
         }
         
         p{
-            color: black;
+            color: white;
             font-weight: bold;
         }
     }
@@ -256,6 +258,9 @@ footer{
 .project:hover{
     scale: 1.1 !important;
     opacity: 1 !important;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 
+                0 20px 40px rgba(0, 0, 0, 0.25), 
+                0 40px 80px rgba(0, 0, 0, 0.3);
 }
 
 .icon{

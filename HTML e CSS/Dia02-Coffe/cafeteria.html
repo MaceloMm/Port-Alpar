@@ -44,12 +44,80 @@
             cursor: pointer;
         }
 
+        th{
+            width: 125px;
+            border: 2px solid white;
+        }
+
+        td{
+            border-left: 2px solid white;
+            border-right: 2px solid white;
+            padding: 5px;
+        }
+
+        table{
+            border: 2px solid white;
+        }
+
     </style>
 </head>
 <body>
-
-    <a href="../../index.html"><img src="seta-esquerda.png" alt="" id="seta"></a>
-        <img src="cafe.png" alt="">
+    <a href="../../#projects"><img src="seta-esquerda.png" alt="" id="seta"></a>
+        <table>
+            <thead>
+            <tr>
+                <th colspan="8"><img src="cafe.png" alt="" width="auto" height="175px"></th>
+            </tr>
+            <tr>
+                <th colspan="8"><h3>Horarios de funcionamento:</h3></th>
+            </tr>
+            </thead>
+            <thead>
+                <th>Horarios</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sabados</th>
+                <th>Domingos e feriados</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" style="border-bottom: 2px solid white;">Manhã</td>
+                    <td>08:00</td>
+                    <td rowspan="4">Fechado</td>
+                    <td>08:00</td>
+                    <td>08:00</td>
+                    <td>08:00</td>
+                    <td>08:00</td>
+                    <td rowspan="4">08:00 <br> 12:00</td>
+                </tr>
+                <tr>
+                    <td style="border-bottom: 2px solid white;">12:00</td>
+                    <td style="border-bottom: 2px solid white;">12:00</td>
+                    <td style="border-bottom: 2px solid white;" >12:00</td>
+                    <td style="border-bottom: 2px solid white;">12:00</td>
+                    <td style="border-bottom: 2px solid white;">12:00</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Tarde</td>
+                    <td>14:00</td>
+                    <td>14:00</td>
+                    <td>14:00</td>
+                    <td>14:00</td>
+                    <td>14:00</td>
+                </tr>
+                <tr>
+                    <td>18:00</td>
+                    <td>18:00</td>
+                    <td>18:00</td>
+                    <td>18:00</td>
+                    <td>18:00</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
         <h2>Café </h2>
         <p>---------------------------------------------------------------------------------------------------------</p>
         <h3>Itens do dia!</h3>
@@ -124,5 +192,5 @@
         </ol>
         <p>---------------------------------------------------------------------------------------------------------</p>
         <p>Cardapio alpar coffe</p>
-</body>
+    </body>
 </html>
