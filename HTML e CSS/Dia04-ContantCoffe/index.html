@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpar Coffe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+        *{
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+            color: white;
+        }
+
+        body{
+            background-color: #0A0A0A;
+        }
+
+        .flexbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section{
+            height: 700px;
+            
+
+            #container{
+                border: 1px solid #333333;
+                justify-content: space-around;
+
+                #title{
+                    margin-top: 20px;
+                    font-size: 25px;
+                }
+            }
+        }
+
+        #content-form{
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            height: 550px;
+
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                input{
+                    background-color: #0A0A0A;
+                    border-bottom: #333333 2px solid !important;
+                    padding: 5px;
+                    box-shadow: none;
+                    border: none;
+                    width: 400px;
+                    border-radius: 5px;
+                    margin: 5px 0px;
+                }
+
+                input:focus{
+                    box-shadow: 0 0 10px #333333;
+                    outline: #333333;
+                }
+
+                label{
+                    margin-left: 5px;
+                }
+
+                textarea{
+                    margin: 10px 0px;
+                    background-color: #0A0A0A;
+                    width: 410px;
+                    height: 70px;
+                    resize: none;
+                    border-radius: 5px;
+                    padding: 5px;
+                    border: #333333 2px solid !important;
+                }
+
+                textarea:focus{
+                    box-shadow: 0 0 10px #333333;
+                    outline: #333333;
+                }
+
+                .buttons{
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 15px;
+
+                    button{
+                        height: 40px;
+                        width: 150px;
+                        background-color: #0A0A0A;
+                        box-shadow: none;
+                        border: none;
+                        border-bottom: 2px solid #333333;
+                        transition: all 0.6s ease;
+                    }
+
+                    button:hover{
+                        background-color: #333333;
+                    }
+                }
+            }
+        }
+
+        header{
+            height: 100px;
+            border-bottom: 2px solid #333333;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            width: 100%;
+
+            a{
+                text-decoration: none;
+                margin: 0px 20px;
+                position: relative;
+                transition: color ease 0.7s;
+            }
+
+            a:hover{
+                color: #4FC3F7;
+            }
+
+            a::after{
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                background-color: #4FC3F7;
+                bottom: 0;
+                left: 0;
+                transition: width 0.7s ease;
+            }
+
+            a:hover::after{
+                width: 70%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="flexbox">
+        <div>
+            <img src="../../static/imgs/alparcoffe.png" alt="" width="auto" height="90px">
+        </div>
+        <nav>
+            <a href="../Dia02-Coffe/cafeteria.html">Home</a>
+            <a href="../../">Portifolio</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <section class="flexbox" id="contato">
+        <div id="container" class="flexbox">
+            <div id="title">Contate Nós</div>
+            <div id="content-form">
+                <form action="#">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Nome...">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required placeholder="Email...">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" placeholder="Telefone...">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" required placeholder="Assunto" id="assunto">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem..." required></textarea>
+                    <div class="buttons flexbox">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -57,17 +57,65 @@
 
         table{
             border: 2px solid white;
+            margin-top: 30px;
+        }
+
+        header{
+            height: 100px;
+            border-bottom: 2px solid #333333;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            width: 100%;
+
+            a{
+                text-decoration: none;
+                margin: 0px 20px;
+                position: relative;
+                transition: color ease 0.7s;
+            }
+
+            a:hover{
+                color: #4FC3F7;
+            }
+
+            a::after{
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                background-color: #4FC3F7;
+                bottom: 0;
+                left: 0;
+                transition: width 0.7s ease;
+            }
+
+            a:hover::after{
+                width: 70%;
+            }
+        }
+
+        .flexbox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
     </style>
 </head>
 <body>
-    <a href="../../#projects"><img src="seta-esquerda.png" alt="" id="seta"></a>
+    <header class="flexbox">
+        <div>
+            <img src="../../static/imgs/alparcoffe.png" alt="" width="auto" height="90px">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="../../">Portifolio</a>
+            <a href="../Dia04-ContantCoffe/">Contato</a>
+        </nav>
+    </header>
         <table>
             <thead>
-            <tr>
-                <th colspan="8"><img src="cafe.png" alt="" width="auto" height="175px"></th>
-            </tr>
             <tr>
                 <th colspan="8"><h3>Horarios de funcionamento:</h3></th>
             </tr>

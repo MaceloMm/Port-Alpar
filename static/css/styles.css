@@ -172,7 +172,7 @@ footer{
     }
     #git:hover{
         transform: scale(1.1);
-        background-image: url('../imgs/github-icon.png') !important;
+        background-image: url('../imgs/github-hover.png') !important;
     }
     #lin{
         background-image: url('../imgs/linkedin-icon.png');
