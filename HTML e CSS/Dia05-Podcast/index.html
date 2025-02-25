@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mago Cast</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+            color: white;
+        }
+
+        body {
+            background-color: #0A0A0A;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        header {
+            height: 150px;
+            border-bottom: 2px solid #333333;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            width: 100%;
+
+            a {
+                text-decoration: none;
+                margin: 0px 20px;
+                position: relative;
+                transition: color ease 0.7s;
+            }
+
+            a:hover {
+                color: #4FC3F7;
+            }
+
+            a::after {
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                background-color: #4FC3F7;
+                bottom: 0;
+                left: 0;
+                transition: width 0.7s ease;
+            }
+
+            a:hover::after {
+                width: 70%;
+            }
+        }
+
+        .flexbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #container-video {
+            flex-direction: row !important;
+            justify-content: space-around;
+            height: 500px;
+            border-bottom: 2px solid #333333;
+        }
+
+        .content-about {
+            width: 40%;
+            margin-left: 30px;
+            height: 75%;
+            padding: 1%;
+        }
+
+        .content-video {
+            width: 40%;
+            border: 2px solid #333333;
+            border-radius: 5px;
+
+            video {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        #container2 {
+            height: 350px;
+            background-image: url('fundo.webp');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            flex-direction: row !important;
+            justify-content: space-around;
+            align-items: center;
+
+            audio {
+                background-color: #333;
+                border-radius: 10px;
+                padding: 10px;
+                margin-right: 150px;
+            }
+
+            .content-about{
+                background-color: #0A0A0A;
+                border-radius: 5px;
+                border: 1px solid #333333;
+                box-shadow: 3px 3px 0px 0px #333333;
+            }
+        }
+
+        #container3 {
+            height: 350px;
+            background-image: url('fundo.webp');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            flex-direction: row !important;
+            justify-content: space-around;
+
+            audio {
+                background-color: #333;
+                border-radius: 10px;
+                padding: 10px;
+                margin-left: 150px;
+            }
+
+            .content-about{
+                background-color: #0A0A0A;
+                border-radius: 5px;
+                border: 1px solid #333333;
+                box-shadow: 3px 3px 0px 0px #333333;
+            }
+        }
+
+        footer{
+            height: 100px;
+            border-top: 2px solid #333333;
+            justify-content: center !important;
+
+            #credits-members{
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                
+                ul li{
+                    margin: 0;
+                    padding: 0;
+                    margin-right: 50px;
+                }
+            }
+
+            .icon{
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="flexbox">
+        <div>
+            <img src="logo.png" alt="">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="../../">Portifolio</a>
+            <a href="#creditos">Creditos</a>
+        </nav>
+    </header>
+
+    <section class="flexbox" id="container-video">
+        <div class="content-about">
+            <h1>Mago Cast</h1>
+            <p>O Mago Cast é um podcast focado em tecnologia e jogos, apresentado por entusiastas que discutem
+                novidades, tendências e curiosidades desses dois universos. Os episódios abordam desde lançamentos de
+                games e gadgets até análises sobre o impacto da tecnologia no cotidiano. Com um tom descontraído e
+                informativo, o podcast busca entreter e informar tanto gamers quanto tech lovers, sempre com dicas,
+                opiniões e debates envolventes. Ideal para quem quer ficar por dentro do mundo geek de forma leve e
+                divertida! 🎮✨</p>
+        </div>
+        <div class="content-video">
+            <video src="0225.mp4" controls width="300px" height="300px"></video>
+        </div>
+    </section>
+
+    <section id="container2" class="flexbox">
+        <div class="content-about">
+            <h1>IA em chefes de jogos</h1>
+            <p>
+                IA do Boss de Mir 5: Sistema avançado que adapta comportamento com base nas ações dos jogadores, usando
+                habilidades especiais, contra-ataques e mudanças de fases. Prioriza alvos e exige estratégia em equipe,
+                elevando o desafio e a imersão. 🎮💡
+            </p>
+        </div>
+        <div class="container-video">
+            <audio src="audio1.MP3" controls></audio>
+        </div>
+    </section>
+
+    <section id="container3" class="flexbox">
+        <div class="container-video">
+            <audio src="audio2.MP3" controls></audio>
+        </div>
+        <div class="content-about">
+            <h1>Geração de Frames por IA</h1>
+            <p>Geração de frames por IA: Técnica que usa inteligência artificial para criar ou preencher quadros
+                (frames) em vídeos, melhorando fluidez ou gerando cenas realistas. Usada em games, filmes e edição de
+                vídeos para otimizar performance e qualidade visual. </p>
+        </div>
+    </section>
+
+    <footer id="creditos" class="flexbox">
+        <div class="flexbox" style="flex-direction: row;">
+            <div id="credits-members">
+                <ul>
+                    <li>Macelo Augusto - Visual</li>
+                    <li>Vicinius Ribeiro - Editor</li>
+                    <li>Luan Pereira - Roteiro</li>
+                </ul>
+            </div>
+            <div>
+                <img src="github-icon.png" alt="" class="icon">
+                <img src="instagram-icon.png" alt="" class="icon">
+                <img src="linkedin-icon.png" alt="" class="icon">
+            </div>
+        </div>
+        <div style="font-size: 13px;">
+            © Todos os direitos reservados - Macelo Augusto.
+        </div>
+    </footer>
+</body>
+
+</html>
