@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: white;
+}
+
+body {
+    background-color: #0A0A0A;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header {
+    height: 150px;
+    border-bottom: 2px solid #333333;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        margin: 0px 20px;
+        position: relative;
+        transition: color ease 0.7s;
+    }
+
+    a:hover {
+        color: #4FC3F7;
+    }
+
+    a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: #4FC3F7;
+        bottom: 0;
+        left: 0;
+        transition: width 0.7s ease;
+    }
+
+    a:hover::after {
+        width: 70%;
+    }
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container-video {
+    flex-direction: row !important;
+    justify-content: space-around;
+    height: 500px;
+    border-bottom: 2px solid #333333;
+}
+
+.content-about {
+    width: 40%;
+    margin-left: 30px;
+    height: 75%;
+    padding: 1%;
+}
+
+.content-video {
+    width: 40%;
+    border: 2px solid #333333;
+    border-radius: 5px;
+
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#container2 {
+    height: 350px;
+    background-image: url('../imgs/fundo.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
+
+    audio {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 10px;
+        margin-right: 150px;
+    }
+
+    .content-about{
+        background-color: #0A0A0A;
+        border-radius: 5px;
+        border: 1px solid #333333;
+        box-shadow: 3px 3px 0px 0px #333333;
+    }
+}
+
+#container3 {
+    height: 350px;
+    background-image: url('../imgs/fundo.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction: row !important;
+    justify-content: space-around;
+
+    audio {
+        background-color: #333;
+        border-radius: 10px;
+        padding: 10px;
+        margin-left: 150px;
+    }
+
+    .content-about{
+        background-color: #0A0A0A;
+        border-radius: 5px;
+        border: 1px solid #333333;
+        box-shadow: 3px 3px 0px 0px #333333;
+    }
+}
+
+footer{
+    height: 100px;
+    border-top: 2px solid #333333;
+    justify-content: center !important;
+
+    #credits-members{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        
+        ul li{
+            margin: 0;
+            padding: 0;
+            margin-right: 50px;
+        }
+    }
+
+    .icon{
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+        cursor: pointer;
+    }
+}
