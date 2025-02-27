@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+:root {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-accent: #4FC3F7;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+@keyframes show_screen {
+    0%{
+        box-shadow: 1px 1px 3px 3px var(--hightlitgh);
+    }25%{
+        box-shadow: 3px 3px 2px 2px var(--hover);
+    }50%{
+        box-shadow: 1px 1px 3px 3px var(--hightlitgh)
+    }
+    100%{
+        box-shadow: 3px 3px 2px 2px var(--hover);
+    }
+}
+
+@keyframes GradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes text-change {
+    from{
+        text-shadow: 2px 2px 4px  var(--hover);
+    }to{
+        text-shadow: 4px 4px 3px  var(--hightlitgh);
+    }
+}
+
+body {
+    background: linear-gradient(45deg, var(--bg-primary), var(--bg-primary), var(--bg-accent), var(--bg-primary));
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite alternate;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    border: 2px solid var(--border-color);
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: show_screen infinite alternate ease-in-out 5s;
+    background-color: var(--bg-primary);
+}
+
+#foto {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        border-radius: 50%;
+        width: 175px;
+        height: 175px;
+        border: 2px solid var(--border-color);
+        margin-bottom: 10px;
+    }
+
+    h3{
+        animation: text-change 5s ease infinite alternate;
+    }
+}
+
+#desc {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+
+    #desc-text {
+        padding: 10px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 20px;
+        background-color: #1b1a1a;
+        border-radius: 10px;
+        border: 2px solid var(--border-color);
+    }
+}
+
+#infos{
+    width: 95%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+}
+
+.social-media{
+    margin: 15px 0px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--border-color);
+    transition: all 0.6s ease;
+
+    p{
+        margin-left: 20px;
+    }
+
+    .icon{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    #discord-icon{
+        background-image: url('../imgs/discordia.png');
+        background-size: cover;
+    }
+
+    #instragram-icon{
+        background-image: url('../../../../assets/imgs/instagram-icon.png');
+        background-size: cover;
+    }
+
+    #lin-icon{
+        background-image: url('../../../../assets/imgs/linkedin-icon.png');
+        background-size: cover;
+    }
+
+    #git-icon{
+        background-image: url('../../../../assets/imgs/github-icon.png');
+        background-size: cover;
+    }
+}
+
+#instagram{
+    background-color: #1b1a1a;
+}
+
+#instagram:hover{
+    background: linear-gradient(45deg, #833AB4, #E1306C, #FCAF45) !important;
+
+    #instragram-icon{
+        background-image: url('../imgs/insta-hover.png');
+    }
+
+    p{
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+}
+
+#discord{
+    background-color: #1b1a1a;
+}
+
+#discord:hover{
+    background: linear-gradient(45deg, #5865F2, #EB459E);
+
+    #discord-icon{
+        background-image: url('../imgs/discord-hover.png');
+    }
+    
+    p{
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+}
+
+#linkedin{
+    background-color: #1b1a1a;
+}
+
+#linkedin:hover{
+    background: linear-gradient(45deg, #0A66C2, #00A0DC);
+
+    #lin-icon{
+        background-image: url('../imgs/lin-hover.png');
+    }
+
+    p{
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+}
+
+#github{
+    background-color: #1b1a1a;
+}
+
+#github:hover{
+    background: linear-gradient(45deg, #000000, #333333);
+
+    #git-icon{
+        background-image: url('../imgs/git-hover.png');
+    }
+
+    p{
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+}
+
+#links{
+    width: 65%;
+    margin: 0px 20px;
+}
+
+#links:hover .social-media{
+    opacity: 0.7;
+    scale: 0.98;
+}
+
+.social-media:hover{
+    opacity: 1 !important;
+    scale: 1.05 !important;
+    border: 2px solid var(--text-primary);
+}
+
+#port{
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    width: 40%;
+    margin: 5px;
+    height: 81%;
+    display: flex;
+    background-color: #1b1a1a;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    animation: GradientAnimation 8s ease infinite;
+}
+
+#port:hover{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #000000, var(--bg-accent));
+
+    h3{
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+}
