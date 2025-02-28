@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: white;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    background-color: #0A0A0A;
+    ;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    background-color: #333333;
+    ;
+    height: 100%;
+}
+
+th {
+    padding: 0px 80px;
+    border-bottom: #0A0A0A 2px solid;
+}
+
+td {
+    padding: 0px 40px;
+}
+
+.option {
+    transition: all ease-in-out 0.7s;
+    cursor: pointer;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+#nav:hover .option {
+    opacity: 0.7;
+}
+
+.option:hover {
+    background-color: #0A0A0A;
+    opacity: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(0, 0, 0, 0.15),
+        0 20px 40px rgba(0, 0, 0, 0.2);
+
+    h3 {
+        color: #4FC3F7;
+    }
+}
+
+.content {
+    padding: 40px 40px;
+    border: 2px solid #0A0A0A;
+
+    img {
+        border-radius: 0.5rem;
+        transition: all 0.7s ease-in;
+    }
+
+    img:hover {
+        scale: 1.1;
+    }
+}
+
+table {
+    border-left: #0A0A0A 2px solid;
+    border-right: #0A0A0A 2px solid;
+}

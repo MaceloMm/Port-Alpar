@@ -1,80 +1,186 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
 
-* {
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    color: white;
+    color: var(--text-secondary);
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
+:root{
+    --bg-primary: #0A0A0A;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+/* Animações */
+
+
+
+/* Tags */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg-primary);
     align-items: center;
-    background-color: #0A0A0A;
-    ;
+    display: flex;
     flex-direction: column;
 }
 
-div {
+header{
+    width: 100%;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--bg-primary);
+    z-index: 100;
+    transition: all 0.6s ease;
+
+    nav{
+
+
+        a{
+            text-decoration: none;
+            margin: 0px 15px;
+            position: relative;
+            transition: all 0.6s ease;
+            color: var(--text-primary);
+        }
+
+        a::after{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--hightlitgh);
+            transition: width 0.7s ease;
+        }
+
+        a:hover{
+            color: var(--hover);
+        }
+
+        a:hover::after{
+            width: 70%;
+        }
+
+    }
+
+    #logo{
+        
+        img{
+
+            width: auto;
+            height: 80px;
+        }
+    }
+
+}
+
+section{
+    height: 1325px;
+    width: 80%;
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+}
+
+footer{
+    background-color: var(--bg-primary);
+    height: 50px;
+    width: 100%;
+    border-top: 2px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 75%;
-    background-color: #333333;
-    ;
-    height: 100%;
+    flex-direction: column;
 }
 
-th {
-    padding: 0px 80px;
-    border-bottom: #0A0A0A 2px solid;
+/* classes */
+
+.content{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
 }
 
-td {
-    padding: 0px 40px;
-}
+.item{
+    margin: 8px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    border: 1px solid var(--border-color);
+    
+    h3{
+        margin-right: 400px !important;
+        margin: 20px 0px;
+        color: var(--hightlitgh);
+        font-weight: bold;
+    }
 
-.option {
-    transition: all ease-in-out 0.7s;
-    cursor: pointer;
+    img{
+        object-fit: cover;
+        width: 500px;
+        height: 350px;
+        object-fit: cover;
+        border: 2px solid var(--border-color);
+        box-shadow: 3px 3px 0px 0px var(--border-color);
+        transition: all 0.6s ease;
+    }
 
-    a {
-        text-decoration: none;
+    img:hover{
+        scale: 1.05;
+        box-shadow: 3px 3px 0px 0px var(--hightlitgh);
+        border-color: var(--hightlitgh);
+    }
+
+    p{
+        margin-top: 20px;
+        background-color: #1A1A1A;
+        border: var(--border-color) 2px solid;
+        padding: 7px;
+        border-radius: 5px;
     }
 }
 
-#nav:hover .option {
-    opacity: 0.7;
+.bord{
+    border-bottom: 2px solid var(--border-color);
+    width: 100%;
 }
 
-.option:hover {
-    background-color: #0A0A0A;
-    opacity: 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-        0 10px 20px rgba(0, 0, 0, 0.15),
-        0 20px 40px rgba(0, 0, 0, 0.2);
-
-    h3 {
-        color: #4FC3F7;
-    }
+.bordLateral{
+    width: 80%;
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
 }
 
-.content {
-    padding: 40px 40px;
-    border: 2px solid #0A0A0A;
+/* Ids */
 
-    img {
-        border-radius: 0.5rem;
-        transition: all 0.7s ease-in;
+#news{
+    width: 80%;
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+
+    h2{
+        margin-left: 80px;
+        margin-top: 20px;
     }
-
-    img:hover {
-        scale: 1.1;
-    }
-}
-
-table {
-    border-left: #0A0A0A 2px solid;
-    border-right: #0A0A0A 2px solid;
 }
