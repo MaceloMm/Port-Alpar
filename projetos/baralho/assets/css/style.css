@@ -130,10 +130,6 @@ body{
         position: relative;
     }
 
-    a:hover{
-        color: white;
-    }
-
     a::after{
         content: '';
         position: absolute;
@@ -145,12 +141,17 @@ body{
         background-color: black;
     }
 
-    a:hover::after{
-        background-color: white ;
-        width: 60%;
-    }
 }
 
 .back:hover{
     background-color: black;
+
+    a{
+        color: white;
+    }
+
+    a::after{
+        width: 60%;
+        background-color: white;
+    }
 }
