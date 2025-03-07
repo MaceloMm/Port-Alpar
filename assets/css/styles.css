@@ -30,6 +30,16 @@
     }
 }
 
+@keyframes changeBackground {
+    0%{
+        background-position: 0% 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0% 50%;
+    }
+}
+
 /* Tags */
 
 html{
@@ -217,7 +227,7 @@ footer{
     margin-top: 75px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-rows: repeat(3, 200px);
     gap: 25px;
     margin-bottom: 20px;
 }
@@ -246,7 +256,10 @@ footer{
     .desc-project{
         height: 30%;
         width: 100%;
-        background-color: var(--border-color);
+        background: linear-gradient(45deg, var(--bg-primary), var(--hightlitgh), var(--hightlitgh));
+        background-size: 400% 400%;
+        animation: changeBackground infinite ease 5s alternate;
+        transition: all 0.7s ease;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -264,6 +277,11 @@ footer{
             color: white;
             font-weight: bold;
         }
+    }
+
+    .desc-project:hover{
+        background: linear-gradient(45deg, var(--bg-primary), var(--hover), var(--hover));
+        animation: none;
     }
 }
 
