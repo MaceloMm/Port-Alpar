@@ -281,7 +281,6 @@ footer{
 
     .desc-project:hover{
         background: linear-gradient(45deg, var(--bg-primary), var(--hover), var(--hover));
-        animation: none;
     }
 }
 
