@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+}
+
+:root{
+    --bg-primary: #0A0A0A;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+    --detail-color: #FFD700;
+}
+
+@keyframes moveBackground {
+    0%{
+        background-position: 0% 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    perspective: 1000px;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--hightlitgh), var(--hightlitgh), var(--hover), var(--hightlitgh));
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite alternate;
+    position: relative;
+} 
+
+#cart-front{
+    width: 425px;
+    height: 600px;
+    background-color: white;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    border-radius: 25px;
+    position: relative;
+}
+
+#cart-front:hover{
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+#cart-front::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#cart-front::after {
+    background-image: url(../imgs/fundo_carta.jpeg);
+    background-position: center;
+    background-size: cover;
+    transform: rotateY(180deg);
+    border-radius: 25px;
+}
+
+
+#icon-top{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        color: var(--bg-primary);
+    }
+}
+
+#icon-back{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img{
+        transform: rotate(180deg);
+    }
+
+    h3{
+        color: var(--bg-primary);
+        transform: rotate(180deg);
+    }
+}
+
+#principal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.back{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.7s ease;
+
+    a{
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 25px;
+        transition: all 0.7s ease;
+        position: relative;
+    }
+
+    a:hover{
+        color: white;
+    }
+
+    a::after{
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 3px;
+        bottom: 0;
+        left: 2px;
+        transition: width 0.7s ease;
+        background-color: black;
+    }
+
+    a:hover::after{
+        background-color: white ;
+        width: 60%;
+    }
+}
+
+.back:hover{
+    background-color: black;
+}
