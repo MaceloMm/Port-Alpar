@@ -10,6 +10,7 @@
     font-family: "Poppins", sans-serif;
     font-style: normal;
     color: var(--text-secondary);
+    transition: 0.6s all ease;
 }
 
 :root{
@@ -92,6 +93,51 @@ header{
     a:hover::after {
         width: 70%;
     }
+
+    .hamburger{
+        display: none;
+        width: 35px;
+        height: 6px;
+        border-radius: 10px;
+        background-color: var(--text-primary);
+        position: relative;
+        transition: all 0.6s ease;
+    }
+
+    .hamburger::before{
+        content: '';
+        position: absolute;
+        background-color: var(--text-primary);
+        width: 35px;
+        height: 6px;
+        border-radius: 10px;
+        bottom: 10px;
+        transition: all 0.6s ease;
+    }
+
+    .hamburger::after{
+        content: '';
+        position: absolute;
+        background-color: var(--text-primary);
+        width: 35px;
+        height: 6px;
+        border-radius: 10px;
+        bottom: -10px;
+        transition: all 0.6s ease;
+    }
+
+    .hamburger:hover{
+        background-color: var(--hightlitgh);
+    }
+
+    .hamburger:hover::after{
+        background-color: var(--hightlitgh);
+    }
+
+    .hamburger:hover::before{
+        background-color: var(--hightlitgh);
+    }
+
 }
 
 footer{
@@ -304,4 +350,53 @@ footer{
     height: 25px;
     margin: 10px;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 968px) {
+
+    header{
+        img{
+            height: 65px;
+        }
+
+        nav{
+            display: none;
+        }
+
+        .hamburger{
+            display: flex
+        }
+    }
+
+    #sobre-min{
+        flex-direction: column;
+        height: auto;
+        margin-top: 50px;
+
+        #about-me{
+            width: 90%;
+            margin-left: 0px;
+            text-align: center;
+        }
+
+        #retrato{
+            
+            img{
+                height: 350px;
+            }
+        }
+    }
+
+    #projects{
+        .title{
+            text-align: center;
+        }
+    }
+
+    .content{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        
+    }
 }
