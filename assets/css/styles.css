@@ -281,6 +281,8 @@ footer{
 
     .desc-project:hover{
         background: linear-gradient(45deg, var(--bg-primary), var(--hover), var(--hover));
+        background-size: 400% 400%;
+        animation: changeBackground infinite ease 8s alternate;
     }
 }
 

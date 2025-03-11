@@ -5,143 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteria</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="assets/javascript/scripts.js" defer></script>
 </head>
 <body>
-    <header class="flexbox">
+    <header class="flexbox nav">
         <div>
-            <img src="../../assets/imgs/alparcoffe.png" alt="" width="auto" height="90px">
+            <img src="../../assets/imgs/alparcoffe.png" alt="" width="auto" height="75px">
         </div>
         <nav>
             <a href="#">Home</a>
             <a href="../../">Portifolio</a>
-            <a href="contato/">Contato</a>
+            <a href="#contato">Contato</a>
         </nav>
+
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
-        <table>
-            <thead>
-            <tr>
-                <th colspan="8"><h3>Horarios de funcionamento:</h3></th>
-            </tr>
-            </thead>
-            <thead>
-                <th>Horarios</th>
-                <th>Segunda</th>
-                <th>Terça</th>
-                <th>Quarta</th>
-                <th>Quinta</th>
-                <th>Sexta</th>
-                <th>Sabados</th>
-                <th>Domingos e feriados</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td rowspan="2" style="border-bottom: 2px solid white;">Manhã</td>
-                    <td>08:00</td>
-                    <td rowspan="4">Fechado</td>
-                    <td>08:00</td>
-                    <td>08:00</td>
-                    <td>08:00</td>
-                    <td>08:00</td>
-                    <td rowspan="4">08:00 <br> 12:00</td>
-                </tr>
-                <tr>
-                    <td style="border-bottom: 2px solid white;">12:00</td>
-                    <td style="border-bottom: 2px solid white;">12:00</td>
-                    <td style="border-bottom: 2px solid white;" >12:00</td>
-                    <td style="border-bottom: 2px solid white;">12:00</td>
-                    <td style="border-bottom: 2px solid white;">12:00</td>
-                </tr>
-                <tr>
-                    <td rowspan="2">Tarde</td>
-                    <td>14:00</td>
-                    <td>14:00</td>
-                    <td>14:00</td>
-                    <td>14:00</td>
-                    <td>14:00</td>
-                </tr>
-                <tr>
-                    <td>18:00</td>
-                    <td>18:00</td>
-                    <td>18:00</td>
-                    <td>18:00</td>
-                    <td>18:00</td>
-                </tr>
-            </tbody>
-        </table>
-        <br><br>
-        <h2>Café </h2>
-        <p>---------------------------------------------------------------------------------------------------------</p>
-        <h3>Itens do dia!</h3>
-        <ol>
-            <li>Café com leite</li>
-            <p>ingredientes</p>
-            <ul>
-                <li>Café</li>
-                <li>Leite</li>
-            </ul>
-            <br>
-            <li>Torta de limão</li>
-            <p>ingredientes</p>
-            <ul>
-                <li>Limão</li>
-                <li>Leite</li>
-                <li>Leite condensado</li>
-                <li>Biscoito</li>
-            </ul>
-        </ol>
-        <p>---------------------------------------------------------------------------------------------------------</p>
-        <h3>Doces</h3>
-        <ol>
-            <li>Bolo</li>
-            <p>Sabores</p>
-            <ul>
-                <li>Morango</li>
-                <li>Abacaxi</li>
-                <li>Chocolate</li>
-                <li>Baunilha</li>
-            </ul>
-            <br>
-            <li>Pudim</li>
-            <p>ingredientes</p>
-            <ul>
-                <li>Leite condensado</li>
-                <li>Leite</li>
-                <li>Ovos</li>
-                <li>Caramelo</li>
-            </ul>
-            <br>
-            <li>Brigadeiro</li>
-            <p>Sabores</p>
-            <ul>
-                <li>Morango</li>
-                <li>Chocolate</li>
-                <li>Baunilha</li>
-            </ul>
-        </ol>
-        <p>---------------------------------------------------------------------------------------------------------</p>
-        <h3>Bebidas</h3>
-        <ol>
-            <li>Suco</li>
-            <p>Sabores:</p>
-            <ul>
-                <li>Morango</li>
-                <li>Limão</li>
-                <li>Laranja</li>
-                <li>Caja</li>
-                <li>Kiwi</li>
-            </ul>
-            <br>
-            <li>Refrigerantes</li>
-            <p>Sabores</p>
-            <ul>
-                <li>Coca-Cola</li>
-                <li>Fanta</li>
-                <li>Guárana</li>
-                <li>Cajuina</li>
-            </ul>
-            <br>
-        </ol>
-        <p>---------------------------------------------------------------------------------------------------------</p>
-        <p>Cardapio alpar coffe</p>
+
+    <aside id="options" class="hidden">
+        <a href="#">Home</a>
+        <a href="../../">Portifolio</a>
+        <a href="#contato">Contato</a>
+    </aside>
+
+    <section class="banner">
+        <div class="alpar">Alpar <span>Coffe</span></div>
+    </section>
+
+    <section class="products flexbox">
+        <div class="title">
+            Nossos Produtos
+        </div>
+        <div class="content-produtcs">
+            <div class="product" id="dayOffers" style="background-image: url(assets/imgs/ofertas.jpg); background-position: center; background-size: cover;">
+                <header>
+                    Itens do dia
+                </header>
+                <main>
+                    <ol class="item-content">
+                        <li class="item">Café com leite</li>
+                        <ul>
+                            <li>Café</li>
+                            <li>Leite</li>
+                        </ul>
+                    </ol>
+
+                    <ol class="item-content">
+                        <li class="item">Torta de limão</li>
+                        <ul>
+                            <li>Limão</li>
+                            <li>Leite</li>
+                            <li>Leite condensado</li>
+                            <li>Biscoito</li>
+                        </ul>
+                    </ol>
+                </main>
+                <footer>
+
+                </footer>
+            </div>
+            <div class="product" id="bebidas" style="background-image: url(assets/imgs/bebidas.webp); background-position: center; background-size: cover;">
+                <header>
+                    Bebidas
+                </header>
+                <main>
+                    <ol class="item-content">
+                        <li class="item">Sucos</li>
+                        <ul>
+                            <li>Morango</li>
+                            <li>Limão</li>
+                            <li>Laranja</li>
+                            <li>Caja</li>
+                            <li>Kiwi</li>
+                        </ul>
+                    </ol>
+
+                    <ol class="item-content">
+                        <li class="item">Refrigerantes</li>
+                        <ul>
+                            <li>Coca-Cola</li>
+                            <li>Fanta</li>
+                            <li>Guárana</li>
+                            <li>Cajuina</li>
+                        </ul>
+                    </ol>
+                </main>
+                <footer>
+
+                </footer>
+            </div>
+            <div class="product" id="candys" style="background-image: url(assets/imgs/teste.jpg); background-position: center; background-size: cover;">
+                <header>
+                    Doces
+                </header>
+                <main>
+                    <ol class="item-content">
+                        <li class="item">Bolo</li>
+                        <ul>
+                            <li>Morango</li>
+                            <li>Abacaxi</li>
+                            <li>Chocolate</li>
+                            <li>Baunilha</li>
+                        </ul>
+                    </ol>
+
+                    <ol class="item-content">
+                        <li class="item">Pudim</li>
+                        <ul>
+                            <li>Leite condensado</li>
+                            <li>Leite</li>
+                            <li>Ovos</li>
+                            <li>Caramelo</li>
+                        </ul>
+                    </ol>
+                </main>
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule flexbox">
+
+        <div class="title">
+            Horarios de funcionamento
+        </div>
+
+        <div class="hors">
+            <table>
+                <thead>
+                    <th>Horarios</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sabados</th>
+                    <th>Domingos e feriados</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="border-bottom: 2px solid #333333;">Manhã</td>
+                        <td>08:00</td>
+                        <td rowspan="4">Fechado</td>
+                        <td>08:00</td>
+                        <td>08:00</td>
+                        <td>08:00</td>
+                        <td>08:00</td>
+                        <td rowspan="4">08:00 <br> 12:00</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 2px solid #333333;">12:00</td>
+                        <td style="border-bottom: 2px solid #333333;">12:00</td>
+                        <td style="border-bottom: 2px solid #333333;" >12:00</td>
+                        <td style="border-bottom: 2px solid #333333;">12:00</td>
+                        <td style="border-bottom: 2px solid #333333;">12:00</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Tarde</td>
+                        <td>14:00</td>
+                        <td>14:00</td>
+                        <td>14:00</td>
+                        <td>14:00</td>
+                        <td>14:00</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>18:00</td>
+                        <td>18:00</td>
+                        <td>18:00</td>
+                        <td>18:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <section class="flexbox" id="contato">
+
+        <div class="descContact">
+            <h2>Contato</h2>
+            <p>@AlparCoffe</p>
+            <p>AlparCoffe@gmail.com</p>
+            <p>11 99999-9999</p>
+        </div>
+
+
+        <div id="container" >
+            <div id="title">Contate Nós</div>
+            <div id="content-form">
+                <form action="">
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="nome" required placeholder="Nome...">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required placeholder="Email...">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" placeholder="Telefone...">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" required placeholder="Assunto" id="assunto">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem..." required></textarea>
+                    <div class="buttons flexbox">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="rodape">
+        <div>© Todos os direitos reservados - AlparCoffe Ltda.</div>
+    </footer>
+
     </body>
 </html>
