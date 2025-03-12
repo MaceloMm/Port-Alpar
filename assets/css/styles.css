@@ -273,7 +273,7 @@ footer{
     margin-top: 75px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
     gap: 25px;
     margin-bottom: 20px;
 }
@@ -302,7 +302,7 @@ footer{
     .desc-project{
         height: 30%;
         width: 100%;
-        background: linear-gradient(45deg, var(--bg-primary), var(--hightlitgh), var(--hightlitgh));
+        background: linear-gradient(45deg, var(--bg-primary), #2e0c3e, #b01832);
         background-size: 400% 400%;
         animation: changeBackground infinite ease 5s alternate;
         transition: all 0.7s ease;
@@ -326,7 +326,7 @@ footer{
     }
 
     .desc-project:hover{
-        background: linear-gradient(45deg, var(--bg-primary), var(--hover), var(--hover));
+        background: linear-gradient(45deg, var(--bg-primary), blueviolet, blueviolet);
         background-size: 400% 400%;
         animation: changeBackground infinite ease 8s alternate;
     }
