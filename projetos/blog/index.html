@@ -3,33 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="assets/javascript/scripts.js" defer></script>
     <title>Alpar Rocket Blog</title>
   </head>
   <body>
-    <header>
-      <h1>Alpar Rocket Blog</h1>
-      <p>Seu blog de notícias e conhecimento sobre tecnologia.</p>
+    <header class="navBar">
+      <div class="logo">
+        <h1>Alpar Rocket Blog</h1>
+        <p>Seu blog de notícias e conhecimento sobre tecnologia.</p>
+      </div>
+
+      <div id="nav" class="navOptions">
+        <a href="#">Inicio</a>
+        <a href="#posts">Postagens</a>
+        <a href="#contato">Contato</a>
+        <a href="../../">Portifolio</a>
+        <button id="modeColor">
+          <div class="bola">
+            <img src="assets/imgs/sun.png" alt="" height="70%">
+          </div>
+        </button>
+      </div>
+
     </header>
-    <aside>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Postagens</a>
-          </li>
-          <li>
-            <a href="#">Contato</a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    <main>
-      <article>
+
+    <section class="banner">
+      <div class="slides">
+        <div class="slide active">
+          <img src="assets/imgs/rede.webp" alt="">
+        </div>
+        <div class="slide">
+          <img src="assets/imgs/ia.jpg" alt="">
+        </div>
+        <div class="slide">
+          <img src="assets/imgs/ferramentas.webp" alt="">
+        </div>
+      </div>
+      <div class="controls">
+        <div class="slideRet active"></div>
+        <div class="slideRet"></div>
+        <div class="slideRet"></div>
+      </div>
+    </section>
+
+    <main class="posts" id="posts">
+
+      <div class="title">Novos Artigos</div>
+
+      <!-- <div class="article">
+        <header>
+          <img src="assets/imgs/iaArtigo.png" alt="">
+        </header>
+        <main>
+          <h2>IA: O quê é?</h2>
+          <img src="assets/imgs/abrir.png" alt="">
+        </main>
+      </div>
+
+      <div class="article">
+        <header>
+          <img src="assets/imgs/rede.webp" alt="">
+        </header>
+        <main>
+          <h2>Rede de computadores</h2>
+          <img src="assets/imgs/abrir.png" alt="">
+        </main>
+      </div>
+
+      <div class="article">
+        <header>
+          <img src="assets/imgs/htmlArtigo.png" alt="">
+        </header>
+        <main>
+          <h2>O que é o HTML?</h2>
+          <img src="assets/imgs/abrir.png" alt="">
+        </main>
+      </div>
+
+      <div class="article">
+        <header>
+          <img src="assets/imgs/cssArtigo.jpeg" alt="">
+        </header>
+        <main>
+          <h2>CSS na Prática</h2>
+          <img src="assets/imgs/abrir.png" alt="">
+        </main>
+      </div>
+
+      <div class="article">
+        <header>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+      </div>
+
+      <div class="article">
+        <header>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+      </div>
+
+      <div class="article">
+        <header>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+      </div>
+
+      <div class="article">
+        <header>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+      </div>
+
+      <div class="article">
+        <header>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+      </div> -->
+
+      <!-- <article>
+
         <header>
           <h2>IA: O quê é?</h2>
         </header>
+
         <section>
           <p>
             IA significa Inteligência Artificial, que é o campo da ciência da
@@ -140,16 +267,13 @@
           </p>
         </section>
       </article>
+
       <article>
         <header>
           <h2>Rede de computadores</h2>
         </header>
         <section>
           <figure>
-            <img
-              src="assets/imgs/rede.webp"
-              alt="Imagem que representa uma rede de computadores, com um globo em azul ligado por cabos em vários laptops, em aluzão a conexão global da internet."
-            />
             <figcaption>
               Rede de Computadores interligadas mundialmente
             </figcaption>
@@ -233,6 +357,7 @@
           </p>
         </section>
       </article>
+
       <article>
         <header>
           <h2>O que é o HTML?</h2>
@@ -322,6 +447,7 @@
           </p>
         </section>
       </article>
+
       <article>
         <header>
           <h2>CSS na Prática</h2>
@@ -391,6 +517,22 @@
           </p>
         </section>
       </article>
+    -->
     </main>
+
+    <main class="oldPosts">
+      <div class="post">
+        <div class="image">
+          teste
+        </div>
+        <div class="desc">
+          
+        </div>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      © Todos os direitos reservados - TechBlog.
+    </footer>
   </body>
 </html>
