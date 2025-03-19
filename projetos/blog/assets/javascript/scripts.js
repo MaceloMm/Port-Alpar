@@ -39,7 +39,29 @@ let articles = [
         'title': 'Django melhor Back-end',
         'image': 'assets/imgs/django.webp'
     }
-]
+];
+let oldPosts = [
+    {
+        id: 1,
+        title: 'PHP na WEB',
+        image: 'assets/imgs/phpArticle.png'
+    },
+    {
+        id: 2,
+        title: 'Vue.js Tutorial',
+        image: 'assets/imgs/vueArticle.png'
+    },
+    {
+        id: 3,
+        title: 'Angular Framework',
+        image: 'assets/imgs/angularArticle.png'
+    },
+    {
+        id: 4,
+        title: 'Python e Pandas',
+        image: 'assets/imgs/pandasArticle.jpeg'
+    }
+];
 
 function showSlide(index) {
     slidesEl.forEach((slide, i) => {
@@ -106,7 +128,32 @@ slideActEl.forEach((slide, i) => {
 function showArticles(article) {
     const postsEl = document.querySelector('.posts');
     const divEl = document.createElement('div');
-    divEl.classList.add('article')
+    divEl.classList.add('article');
+
+    const headerEl = document.createElement('header');
+    const headerImgEl = document.createElement('img');
+    headerImgEl.setAttribute('src', article.image);
+    headerEl.appendChild(headerImgEl);
+
+    const mainEl = document.createElement('main');
+    const h2MainEl = document.createElement('h2');
+    h2MainEl.innerHTML = article.title;
+    const imgMainEl = document.createElement('img');
+    imgMainEl.setAttribute('src', 'assets/imgs/abrir.png');
+
+    mainEl.appendChild(h2MainEl);
+    mainEl.appendChild(imgMainEl);
+
+    divEl.appendChild(headerEl);
+    divEl.appendChild(mainEl);
+
+    postsEl.appendChild(divEl);
+}
+
+function showOldArticles(article){
+    const postsEl = document.querySelector('.oldPosts');
+    const divEl = document.createElement('div');
+    divEl.classList.add('post');
 
     const headerEl = document.createElement('header');
     const headerImgEl = document.createElement('img');
@@ -129,4 +176,5 @@ function showArticles(article) {
 }
 
 
-articles.forEach(showArticles)
+articles.forEach(showArticles);
+oldPosts.forEach(showOldArticles);
