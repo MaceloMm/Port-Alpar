@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  </head>
+    <script src="assets/js/scripts.js" defer></script>
+</head>
 
   <body class="d-flex flex-column min-vh-100">
 
@@ -108,10 +109,10 @@
     </div>
 
     <div class="container mt-5" id="contato">
-        <div class="row mb-5 px-3 p-lg-0">
+        <div class="row mb-3 px-3 p-lg-0">
             <p class="h1">Contate-nós</p>
         </div>
-        <div class="row row-cols-1 row-cols-lg-2 p-3 p-lg-0">
+        <div class="row row-cols-1 row-cols-lg-2 p-4 p-lg-0">
             <div class="col">
                 <div class="d-flex align-items-center mb-5 my-lg-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="auto" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
@@ -133,26 +134,41 @@
                 </div>
             </div>
             <div class="col">
-                <form style="height: 500px;">
-                    <div class="mb-3">
-                        <label for="nameContant" class="form-label">Nome</label>
-                        <input type="password" class="form-control" id="nameContant">
+                <form style="height: 500px;" id="contactForm">
+                    <div class="mb-3 form-floating">
+                        <input type="text" class="form-control" id="nameContant" required>
+                        <label for="floatingInput">Nome</label>
                     </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                      </div>
                     <div class="mb-3">
-                      <label for="emailContact" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="emailContact" aria-describedby="emailHelp">
+                        <label for="subjectContact" class="form-label">Assunto</label>
+                        <select class="form-select" aria-label="Fazer orçamento" id="assuntoContact" required>
+                            <option selected>Selecione um tipo de assunto...</option>
+                            <option value="1">Fazer orçamento</option>
+                            <option value="2">Duvidas</option>
+                            <option value="3">Quero um Site</option>
+                        </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="subjectContanct" class="form-label">Assunto</label>
-                        <input type="email" class="form-control" id="subjectContanct" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
+                    <div >
                         <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" style="resize: none;"></textarea>
+                        <textarea class="form-control" id="messagemForm" rows="4" style="resize: none;"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-secondary w-25">Enviar</button>
-                    <button type="reset" class="btn btn-secondary w-25">Resetar</button>
-                  </form>
+                    <div class="form-check my-2">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" for="checkDefault">
+                          Podemos enviar atualizações no email?
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-secondary w-25" id="sendButtdonContact">Enviar</button>
+                    <button type="reset" class="btn btn-secondary w-25" id="resetButtonContact">Resetar</button>
+                </form>
+                <div class="alert d-none" id="alertForm" role="alert">
+                    A simple success alert—check it out!
+                </div>
             </div>
         </div>
     </div>
