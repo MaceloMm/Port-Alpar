@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        .nav-link{
+            position: relative;
+            transition: 0.6s ease;
+        }
+
+        .nav-link:hover{
+            color: goldenrod;
+        }
+
+        .nav-link::after{
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: goldenrod;
+            transition: 0.6s ease;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-link:hover::after{
+            width: 50%;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow sticky-top z-1">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-5" href="#">Painel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../" class="nav-link">Portifolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <div class="position-relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+                                </svg>
+                                <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show w-25 position-fixed top-0 mt-3 start-50 translate-middle-x shadow z-3" role="alert">
+        Bem Vindo.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../blog/assets/imgs/htmlArtigo.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../blog/assets/imgs/angularArticle.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../blog/assets/imgs/pandasArticle.jpeg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col-4">
+                <div class="card h-100">
+                    <img src="assets/images/python.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color: black;">
+                      <h5 class="card-title">Python</h5>
+                      <p class="card-text">Python é uma linguagem de programação versátil e popular que serve para criar programas, automatizar tarefas e analisar dados. 
+                        É utilizada em diversas áreas, como ciência de dados, inteligência artificial, desenvolvimento web e automação. </p>
+                      <a href="https://www.python.org" class="btn btn-secondary" target="_blank">Documentação</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-4">
+                <div class="card h-100">
+                    <img src="../blog/assets/imgs/javascript.png" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color: black;">
+                      <h5 class="card-title">JavaScript</h5>
+                      <p class="card-text">JavaScript (JS) é uma linguagem de programação que permite adicionar interatividade a páginas da web. 
+                        É a linguagem mais popular do mundo, segundo a Pesquisa de Desenvolvedores do Stack Overflow de 2022</p>
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="btn btn-secondary mt-4" target="_blank">Documentação</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-4">
+                <div class="card h-100">
+                    <img src="../blog/assets/imgs/django.webp" class="card-img-top" alt="...">
+                    <div class="card-body" style="background-color: black;"> 
+                      <h5 class="card-title">Django Framework</h5>
+                      <p class="card-text">Django é um framework de desenvolvimento web que permite criar aplicações web de forma 
+                        rápida e eficiente. Ele é escrito em Python, uma linguagem de programação popular e relativamente fácil de aprender. </p>
+                      <a href="https://docs.djangoproject.com/en/5.1/" class="btn btn-secondary mt-5" target="_blank">Documentação</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center mt-3 shadow p-2" style="background-color: #2b3035;">
+        © Todos os direitos reservados - Macelo Augusto.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -28,3 +28,23 @@ document.getElementById("resetButtonContact").addEventListener('click', () => {
 
     alertForm.classList.add('d-none');
 })
+
+document.getElementById("emailContact").addEventListener('input', function () {
+    if (this.value.includes('@')){
+        this.classList.add('is-valid');
+        this.classList.remove('is-invalid');
+    }else{
+        this.classList.add('is-invalid');
+        this.classList.remove('is-valid');
+    }
+})
+
+document.getElementById("nameContant").addEventListener('input', function(){
+    if (this.value != ''){
+        this.classList.add('is-valid');
+        this.classList.remove('is-invalid');
+    }else{
+        this.classList.add('is-invalid');
+        this.classList.remove('is-valid');
+    }
+})

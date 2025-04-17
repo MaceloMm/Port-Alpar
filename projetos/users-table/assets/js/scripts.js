@@ -36,6 +36,13 @@ function showUsers(user){
     trElement.appendChild(tdRoleElement);
 }
 
+function deleteUsers(){
+    const elements = document.querySelectorAll("#dados tr");
+    elements.forEach(function(element){
+        element.remove();
+    })
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const rows = document.querySelectorAll('table tbody tr');
   
@@ -60,10 +67,17 @@ document.getElementById("excluirButton").addEventListener('click', () => {
         alertC.classList.remove('d-none');
     }else{
         const userId = Number(document.querySelector("tr.table-active th").innerHTML) - 1;
-        
+        const user = users[userId];
+        users.splice(user, 1);
+        console.log(users);
+        alertC.innerHTML = `Usuario ${user.name} removido`;
+        alertC.classList.remove('d-none');
 
+        deleteUsers();
+        users.forEach(showUsers);
     }
 })
+
 
 
 users.forEach(showUsers);
