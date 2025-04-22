@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-accent: #4FC3F7;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(45deg, var(--bg-primary), var(--bg-primary), var(--bg-accent), var(--bg-primary));
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite alternate;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentInfomations{
+    font-size: 1.6rem;
+    width: 80rem;
+    height: 50rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(79, 195, 247, 0.2);
+
+
+    .titleCotent{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+
+        h2{
+            color: var(--text-primary) !important;
+        }
+
+        img{
+            height: 40px;
+            width: auto;
+        }
+    }
+
+    .infosContent{
+        width: 80%;
+        height: 50%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+
+        .informations{
+            margin-top: 15px;
+            padding: 1.6rem;
+            background-color: #333333;
+            border-radius: 0.3rem;
+            color: var(--text-primary);
+        }
+    }
+
+    .buttons{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            width: 20rem;
+            height: 3.3rem;
+            color: var(--text-primary);
+            border: none;
+            background-color: var(--bg-primary);
+            border-bottom: 2px solid rgba(79, 195, 247, 0.8);
+            cursor: pointer;
+            padding: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: 0.6s ease;
+        }
+
+        button:hover{
+            background-color: var(--bg-accent);
+            color: var(--bg-primary);
+            border-bottom: 2px solid white;
+        }
+    }
+}

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-accent: #4FC3F7;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseError {
+    0% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(255, 69, 0, 0.5); }
+    100% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); }
+}
+
+@keyframes pulseValid {
+    0% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(69, 255, 0, 0.5); }
+    100% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.3); }
+}
+
+
+body {
+    background: linear-gradient(45deg, var(--bg-primary), var(--bg-primary), var(--bg-accent), var(--bg-primary));
+    background-size: 400% 400%;
+    animation: moveBackground 10s ease infinite alternate;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contentLogin{
+    font-size: 1.6rem;
+    width: 60rem;
+    height: 45rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: var(--bg-primary);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(79, 195, 247, 0.2);
+
+    .title{
+        h1{
+            color: var(--text-primary) !important;
+        }
+    }
+
+
+    .forms{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 50%;
+        padding: 1.6rem;
+        gap: 2.5rem;
+
+        label{
+            font-size: 1.7rem;
+        }
+
+        input{
+            height: 3.5rem;
+            border-radius: 4px;
+            padding: 0.5rem;
+            position: relative;
+            background-color: var(--bg-primary);
+            border: none;
+            border-bottom: 2px solid var(--bg-accent);
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        input:focus{
+            box-shadow: 0 0 10px rgba(79, 195, 247, 1);
+            outline: var(--bg-accent);
+        }
+
+        input.isInvalid{
+            border-bottom: 2px solid rgba(255, 0, 0, 0.7) !important;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.3), 0 0 12px rgba(255, 69, 0, 0.2);
+            animation: pulseError 2s ease-in-out;
+        }
+
+        input.isValid{
+            border-bottom: 2px solid rgba(0, 255, 0, 0.7) !important;
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.3), 0 0 12px rgba(69, 255, 0, 0.2);
+            animation: pulseValid 2s ease-in-out;
+        }
+
+        .campForm{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+
+            svg{
+                position: absolute;
+                right: 2rem;
+                top: 60%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .info{
+        color: rgba(255, 0, 0, 0.7);
+        width: 80%;
+        height: 2.5rem;
+        padding-left: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+
+        button{
+            width: 20rem;
+            height: 3.3rem;
+            color: var(--text-primary);
+            border: none;
+            background-color: var(--bg-primary);
+            border-bottom: 2px solid rgba(79, 195, 247, 0.8);
+            cursor: pointer;
+            padding: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: 0.6s ease;
+        }
+
+        button:hover{
+            background-color: var(--bg-accent);
+            color: var(--bg-primary);
+            border-bottom: 2px solid white;
+        }
+    }
+}
+
+
+.hide{
+    display: none !important;
+}
+
+@media screen and (max-width: 968px) {
+    
+    .contentLogin{
+        width: 90%;
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket School</title>
+    <link rel="stylesheet" href="assets/css/infos.css" type="text/css">
+    <link rel="shortcut icon" href="../../assets/imgs/foguete.png" type="icon">
+
+    <script>
+        class User {
+
+            constructor(name, email, password) {
+                this.name = name;
+                this.email = email;
+                this.password = password;
+            }
+
+            exibirPerfil() {
+                return [this.name, this.email]
+            }
+
+            checkLogin(email, password) {
+                return email === this.email && password === this.password;
+            }
+        }
+
+        class Studant extends User {
+
+            constructor(name, email, password, classStudant) {
+                super(name, email, password);
+                this.classStudant = classStudant;
+                this.type = 'aluno'
+            }
+
+            exibirPerfil() {
+                const containerPrincipal = document.getElementById('contentInfos');
+
+                const titleCotentEl = document.createElement('div');
+                titleCotentEl.classList.add('titleCotent');
+
+                const imgTitleEl = document.createElement('img');
+                imgTitleEl.setAttribute('src', 'assets/images/education.png');
+
+                const h2TitleEl = document.createElement('h2');
+                h2TitleEl.innerHTML = 'Informações do aluno';
+
+                titleCotentEl.appendChild(imgTitleEl);
+                titleCotentEl.appendChild(h2TitleEl);
+                containerPrincipal.appendChild(titleCotentEl);
+
+                const infosCotentEl = document.createElement('div');
+                infosCotentEl.classList.add('infosContent');
+
+                const div1ContentEl = document.createElement('div');
+                const labelDiv1El = document.createElement('label');
+                labelDiv1El.setAttribute('for', 'nameShow');
+                labelDiv1El.innerHTML = 'Nome:';
+                const divInfo1El = document.createElement('div');
+                divInfo1El.innerHTML = this.name;
+                divInfo1El.classList.add('informations');
+                divInfo1El.setAttribute('id', 'nameShow');
+
+                div1ContentEl.appendChild(labelDiv1El);
+                div1ContentEl.appendChild(divInfo1El);
+                infosCotentEl.appendChild(div1ContentEl);
+
+                const div2ContentEl = document.createElement('div');
+                const labelDiv2El = document.createElement('label');
+                labelDiv2El.setAttribute('for', 'emailShow');
+                labelDiv2El.innerHTML = 'Email:';
+                const divInfo2El = document.createElement('div');
+                divInfo2El.innerHTML = this.email;
+                divInfo2El.classList.add('informations');
+                divInfo2El.setAttribute('id', 'emailShow');
+
+                div2ContentEl.appendChild(labelDiv2El);
+                div2ContentEl.appendChild(divInfo2El);
+                infosCotentEl.appendChild(div2ContentEl);
+
+                const div3ContentEl = document.createElement('div');
+                const labelDiv3El = document.createElement('label');
+                labelDiv3El.setAttribute('for', 'classShow');
+                labelDiv3El.innerHTML = 'Turma:';
+                const divInfo3El = document.createElement('div');
+                divInfo3El.innerHTML = this.classStudant;
+                divInfo3El.classList.add('informations');
+                divInfo3El.setAttribute('id', 'classShow');
+
+                div3ContentEl.appendChild(labelDiv3El);
+                div3ContentEl.appendChild(divInfo3El);
+                infosCotentEl.appendChild(div3ContentEl);
+
+                containerPrincipal.appendChild(infosCotentEl);
+
+                const buttonDivEl = document.createElement('div');
+                buttonDivEl.classList.add('buttons');
+                const linkEl = document.createElement('a');
+                linkEl.setAttribute('href', 'index.html');
+                const buttonEl = document.createElement('button');
+                buttonEl.innerHTML = 'Voltar';
+                linkEl.appendChild(buttonEl);
+                buttonDivEl.appendChild(linkEl);
+                containerPrincipal.appendChild(buttonDivEl);
+            }
+        }
+
+        class Teacher extends User {
+
+            constructor(name, email, password, materias) {
+                super(name, email, password);
+                this.materias = materias;
+                this.type = 'professor';
+            }
+
+            exibirPerfil() {
+                const containerPrincipal = document.getElementById('contentInfos');
+
+                const titleCotentEl = document.createElement('div');
+                titleCotentEl.classList.add('titleCotent');
+
+                const imgTitleEl = document.createElement('img');
+                imgTitleEl.setAttribute('src', 'assets/images/teacher.png');
+
+                const h2TitleEl = document.createElement('h2');
+                h2TitleEl.innerHTML = 'Informações do Professor';
+
+                titleCotentEl.appendChild(imgTitleEl);
+                titleCotentEl.appendChild(h2TitleEl);
+                containerPrincipal.appendChild(titleCotentEl);
+
+                const infosCotentEl = document.createElement('div');
+                infosCotentEl.classList.add('infosContent');
+
+                const div1ContentEl = document.createElement('div');
+                const labelDiv1El = document.createElement('label');
+                labelDiv1El.setAttribute('for', 'nameShow');
+                labelDiv1El.innerHTML = 'Nome:';
+                const divInfo1El = document.createElement('div');
+                divInfo1El.innerHTML = this.name;
+                divInfo1El.classList.add('informations');
+                divInfo1El.setAttribute('id', 'nameShow');
+
+                div1ContentEl.appendChild(labelDiv1El);
+                div1ContentEl.appendChild(divInfo1El);
+                infosCotentEl.appendChild(div1ContentEl);
+
+                const div2ContentEl = document.createElement('div');
+                const labelDiv2El = document.createElement('label');
+                labelDiv2El.setAttribute('for', 'emailShow');
+                labelDiv2El.innerHTML = 'Email:';
+                const divInfo2El = document.createElement('div');
+                divInfo2El.innerHTML = this.email;
+                divInfo2El.classList.add('informations');
+                divInfo2El.setAttribute('id', 'emailShow');
+
+                div2ContentEl.appendChild(labelDiv2El);
+                div2ContentEl.appendChild(divInfo2El);
+                infosCotentEl.appendChild(div2ContentEl);
+
+                const div3ContentEl = document.createElement('div');
+                const labelDiv3El = document.createElement('label');
+                labelDiv3El.setAttribute('for', 'classShow');
+                labelDiv3El.innerHTML = 'Materia:';
+                const divInfo3El = document.createElement('div');
+                divInfo3El.innerHTML = this.materias;
+                divInfo3El.classList.add('informations');
+                divInfo3El.setAttribute('id', 'classShow');
+
+                div3ContentEl.appendChild(labelDiv3El);
+                div3ContentEl.appendChild(divInfo3El);
+                infosCotentEl.appendChild(div3ContentEl);
+
+                containerPrincipal.appendChild(infosCotentEl);
+
+                const buttonDivEl = document.createElement('div');
+                buttonDivEl.classList.add('buttons');
+                const linkEl = document.createElement('a');
+                linkEl.setAttribute('href', 'index.html');
+                const buttonEl = document.createElement('button');
+                buttonEl.innerHTML = 'Voltar';
+                linkEl.appendChild(buttonEl);
+                buttonDivEl.appendChild(linkEl);
+                containerPrincipal.appendChild(buttonDivEl);
+            }
+        }
+
+        let usuario = JSON.parse(localStorage.getItem('usuario'));
+
+        if (usuario.type === 'aluno') {
+            usuario = Object.assign(new Studant(), usuario);
+        } else {
+            usuario = Object.assign(new Teacher(), usuario);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log(usuario);
+            usuario.exibirPerfil();
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div class="contentInfomations" id="contentInfos">
+        
+    </div>
+
+</body>
+
+</html>
