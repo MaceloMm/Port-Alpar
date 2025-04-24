@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #1A1A1A;
+    --bg-accent: #4FC3F7;
+    --hightlitgh: #4FC3F7;
+    --hover: #7AC74F;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --border-color: #333333;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseError {
+    0% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(255, 69, 0, 0.5); }
+    100% { box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); }
+}
+
+@keyframes pulseValid {
+    0% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(69, 255, 0, 0.5); }
+    100% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.3); }
+}
+
+
+body {
+    background-color: var(--bg-primary);
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.containerPrincipal{
+    margin-top: 3rem;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    width: 150rem;
+    height: 90rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(79, 195, 247, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ligths{
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    width: 95%;
+    height: 60%;
+    border-radius: 1rem;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+
+    .light{
+        border: 2px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+            color: var(--text-primary);
+        }
+    }
+
+    #garagem{
+        grid-row: span 2;
+    }
+
+    .active{
+        background-color: yellow;
+
+        h1{
+            color: black;
+        }
+    }
+}
+
+.buttons{
+    background-color: var(--bg-primary);
+    width: 95%;
+    height: 30%;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+
+
+    .btn{
+        border: none;
+        background-color: #0A0A0A;
+        border: 2px solid var(--border-color);
+        cursor: pointer;
+        padding: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: 0.6 ease;
+
+        h2{
+            color: var(--text-primary);
+        }
+
+        img{
+            width: auto;
+            height: 60px;
+            position: absolute;
+            right: 3rem;
+        }
+    }
+
+    .btn:hover{
+        background-color: var(--bg-accent);
+        
+    }
+
+    .active{
+        background-color: yellow !important;
+        
+        h2{
+            color: var(--bg-primary);
+        }
+    }
+}
+
+.footer{
+    border-top: 2px solid var(--border-color);
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        color: var(--text-primary);
+        font-size: 1.8rem;       
+        transition: 0.6s ease; 
+        position: relative;
+    }
+    
+    a:hover{
+        color: var(--bg-accent);
+    }
+
+    a::after{
+        content: '';
+        width: 0%;
+        height: 0.3rem;
+        background-color: var(--bg-accent);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.6s ease;
+    }
+
+    a:hover::after{
+        width: 60%;
+    }
+}
