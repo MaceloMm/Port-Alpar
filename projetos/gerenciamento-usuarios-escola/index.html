@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="schoolSystem">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
+    <script src="assets/scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body ng-controller="schoolController">
+
+    <div class="container">
+        <div class="title" >
+            <h2 ng-bind="msgb"></h2>
+        </div>
+
+        <div class="cadastro" ng-if="toggleCadastro">
+            <form action="">
+                <label>
+                    <span>Nome:</span>
+                    <input type="text" ng-model="userInput.name">
+                </label>
+                <label>
+                    <span>Tipo:</span>
+                    <select name="" id="" ng-model="userInput.tipo">
+                        <option value="aluno">Aluno</option>
+                        <option value="professor">professor</option>
+                    </select>
+                </label>
+                <button type="button" ng-click="getUserData()">Enviar</button>
+            </form>
+        </div>
+
+        <div class="checkRegister" ng-if="toggleCheckRegister">
+            <form action="">
+                <label>
+                    <span>Digite o nome:</span>
+                    <input type="text" ng-model="seachName.name">
+                </label>
+                <button type="button" ng-click="seachUser()">Enviar</button>
+            </form>
+        </div>
+
+        <div class="showUser" ng-if="toggleUsersData">
+            <img ng-src="{{ img }}" alt="">
+            <div class="data">
+                <label>Nome: {{ userS.nome }}</label>
+                <label>Tipo: {{ userS.tipo }}</label>
+            </div>
+        </div>
+
+        <div class="options">
+            <button type="button" ng-click="showCadastroScreen()">
+                Cadastrar
+            </button>
+            <button type="button" ng-click="showSearchScreen()">
+                Verificar Cadastro
+            </button>
+            <button type="button" ng-click="hideAll()">
+                Voltar
+            </button>
+        </div>
+    </div>
+    
+    <div class="port"><a href="../../">Portfolio</a></div>
+</body>
+</html>

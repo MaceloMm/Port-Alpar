@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="taskModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
+    <script src="assets/javascript/main.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body ng-controller="TaskController">
+    
+    <header id="header">
+        <section class="title">
+
+            <h1>Lista de tarefas</h1>   
+            <button type="button" ng-click="toggleModal()">
+                <span class="add">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                </span>
+                Adicionar Tarefa
+            </button>
+
+        </section>
+
+        <section class="filters">
+            <label class="checkbox">
+                <input type="checkbox">Complestas
+                <span></span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">Incompletas
+                <span></span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox">Para Hoje
+                <span></span>
+            </label>
+        </section>
+    </header>
+
+    <main id="content">
+        <article ng-repeat="task in tasks" class="task" ng-class="{'checked': task.checked}">
+            <label class="checkbox">
+                <input type="checkbox" ng-model="task.checked" ng-change="toggleTask()">
+                <span></span>
+                <h3 ng-bind="task.title"></h3>
+                <p class="date" ng-bind="task.dateStr"></p>
+            </label>
+            <button type="button" ng-click="deleteTask(task)">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+        </article>
+
+        <p class="empty" ng-hide="tasks.length">
+            Nenhuma tarefa cadastrada.
+        </p>
+    </main>
+
+    <aside ng-if="modalActive" class="modal-container">
+        <button type="button" ng-click="toggleModal()" class="giantButton"></button>
+        <div class="modal">
+            <button type="button" class="close" ng-click="toggleModal()">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button>
+            <h2>Adicionar uma Tarefa</h2>
+            <form action="" ng-submit="handleSubmitAddTask()">
+                <label>
+                    <p>Nome</p>
+                    <input type="text" placeholder="Nome da Tarefa" ng-model="taskInput.title">
+                </label>
+                <label>
+                    <p>Data</p>
+                    <input type="date" ng-model="taskInput.date">
+                </label>
+                <button class="send" type="submit">Adicionar</button>
+            </form>
+        </div>
+    </aside>
+
+</body>
+</html>
