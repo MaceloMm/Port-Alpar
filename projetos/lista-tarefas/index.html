@@ -37,14 +37,14 @@
 
         <section class="filters">
             <label class="checkbox">
-                <input type="checkbox">Complestas
+                <input type="checkbox" ng-model="showCompletedOnly">Complestas
                 <span></span>
             </label>
             <label class="checkbox">
-                <input type="checkbox">Incompletas
+                <input type="checkbox" ng-model="showIncompletedOnly">Incompletas
                 <span></span>
             </label>
-            <label class="checkbox">
+            <label class="checkbox" ng-model="tasksForNow">
                 <input type="checkbox">Para Hoje
                 <span></span>
             </label>
@@ -52,7 +52,10 @@
     </header>
 
     <main id="content">
-        <article ng-repeat="task in tasks" class="task" ng-class="{'checked': task.checked}">
+        <article ng-repeat="task in tasks | orderBy: 'checked' | filter: (showCompletedOnly ? {checked: true} : {}) 
+        | filter: (showIncompletedOnly ? {checked: false} : {}) | filter: (tasksForNow ? {dateStr: today} : {})" 
+        class="task" 
+        ng-class="{'checked': task.checked}">
             <label class="checkbox">
                 <input type="checkbox" ng-model="task.checked" ng-change="toggleTask()">
                 <span></span>
@@ -66,7 +69,8 @@
             </button>
         </article>
 
-        <p class="empty" ng-hide="tasks.length">
+        <p class="empty" ng-hide="(tasks | filter: (showCompletedOnly ? {checked: true} : {}) 
+        | filter: (showIncompletedOnly ? {checked: false} : {}) | filter: (tasksForNow ? {dateStr: today} : {})).length">
             Nenhuma tarefa cadastrada.
         </p>
     </main>

@@ -20,7 +20,7 @@
 </head>
 <body ng-controller="schoolController">
 
-    <div class="container">
+    <div class="container" ng-if="!showUsersGeral">
         <div class="title" >
             <h2 ng-bind="msgb"></h2>
         </div>
@@ -67,12 +67,46 @@
             <button type="button" ng-click="showSearchScreen()">
                 Verificar Cadastro
             </button>
+            <button type="button" ng-click="showAllUsers()">
+                Todos os usuarios
+            </button>
             <button type="button" ng-click="hideAll()">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <div class="showUsers" ng-if="showUsersGeral"> 
+
+        <div class="title" >
+            <h2><span>"{{ users.length }}"</span>Usuarios Cadastrados!</h2>
+            <select name="" id="" ng-model="filtro">
+                <option value="todos">Todos</option>
+                <option value="aluno">Aluno</option>
+                <option value="professor">Professor</option>
+            </select>
+        </div>
+
+        <div class="allUsers">
+            <div class="cards">
+                <div class="contentCard" ng-repeat="user in users | filter: (filtro === 'todos' ? {} : {tipo: filtro})">
+                    <p>Nome: 
+                    <strong><span ng-bind="user.nome | uppercase"></strong></span> | 
+                    Tipo: <span ng-bind="user.tipo"></span> | 
+                    Data de cadastro: <span ng-bind="user.date | date: 'dd/mm/yyyy'"></span></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="options">
+            <button type="button" ng-click="showAllUsers()">
                 Voltar
             </button>
         </div>
     </div>
     
     <div class="port"><a href="../../">Portfolio</a></div>
+
 </body>
 </html>

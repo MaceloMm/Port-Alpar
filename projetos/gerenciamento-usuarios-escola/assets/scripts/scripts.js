@@ -2,26 +2,30 @@ const app = angular.module("schoolSystem", []);
 
 app.controller('schoolController', function($scope) {
 
-    $scope.msgb = 'Bem-vindo ao sistema de cadastro escolar';
+    // variables
 
+    $scope.msgb = 'Bem-vindo ao sistema de cadastro escolar';
     $scope.toggleCadastro = false;
+    $scope.filtro = 'todos';
     $scope.toggleCheckRegister = false;
     $scope.toggleUsersData = false;
-
+    $scope.showUsersGeral = false;
     $scope.users = JSON.parse(localStorage.getItem('users')) || [];
-
     $scope.userInput = {
         name: '',
         tipo: ''
     };
-
     $scope.seachName = {name: ''};
+
+    // functions
 
     $scope.getUserData = () => {
         $scope.users.push(
             {
+                id: Math.random().toString(36).substring(2, 9),
                 nome: $scope.userInput.name,
-                tipo: $scope.userInput.tipo
+                tipo: $scope.userInput.tipo,
+                date: new Date()
             }
         );
         localStorage.setItem('users', JSON.stringify($scope.users));
@@ -29,7 +33,6 @@ app.controller('schoolController', function($scope) {
         $scope.userInput.name = '';
         $scope.userInput.tipo = '';
     };
-
     $scope.showCadastroScreen = () => {
         $scope.toggleCheckRegister = false;
         $scope.toggleUsersData = false;
@@ -51,7 +54,6 @@ app.controller('schoolController', function($scope) {
         $scope.toggleCheckRegister = false;
         $scope.toggleUsersData = false;
     }
-
     $scope.seachUser = () => {
 
         $scope.userS = $scope.users.find((user) => {
@@ -67,7 +69,8 @@ app.controller('schoolController', function($scope) {
         $scope.showUsersData();
 
     };
-
+    $scope.showAllUsers = () => {
+        $scope.showUsersGeral = !$scope.showUsersGeral;
+    }
 });
 
-''.toLowerCase

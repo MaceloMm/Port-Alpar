@@ -1,6 +1,6 @@
 const app = angular.module('taskModule', []);
 
-app.controller('TaskController', function ($scope){
+app.controller('TaskController', function ($scope, $filter){
 
     $scope.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -9,7 +9,11 @@ app.controller('TaskController', function ($scope){
         date: '',
     }
 
+    $scope.showCompletedOnly = false;
+    $scope.showIncompletedOnly = false;
+    $scope.tasksForNow = false;
     $scope.modalActive = false;
+    $scope.today = new Date().toLocaleDateString();
 
     $scope.toggleModal = () => {
         $scope.modalActive = !$scope.modalActive;
@@ -44,7 +48,7 @@ app.controller('TaskController', function ($scope){
         localStorage.setItem('tasks', JSON.stringify($scope.tasks));
     }
 
+    $scope.filteredTasks = function(){
+        return $filter('filter')($scope.tasks, $scope.showCompletedOnly ? {checked: true} : {})
+    }
 });
-
-let array = [];
-array.length
