@@ -65,6 +65,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10rem 0 ;
 }
 
 .container{
@@ -337,8 +339,7 @@ body {
 }
 
 .port{
-    position: fixed;
-    bottom: 10%;
+    display: flex;
     padding: 1.2rem;
     background-color: var(--border-color);
     border-radius: 0.8rem;
@@ -415,7 +416,7 @@ body {
     .allUsers{
 
         .cards{
-            
+
             .contentCard:first-child{
                 padding-top: 0;
             }
