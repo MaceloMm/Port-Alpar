@@ -10,7 +10,39 @@ app.controller('schoolController', function($scope) {
     $scope.toggleCheckRegister = false;
     $scope.toggleUsersData = false;
     $scope.showUsersGeral = false;
-    $scope.users = JSON.parse(localStorage.getItem('users')) || [];
+    $scope.users = JSON.parse(localStorage.getItem('users')) || [
+        {
+            id: Math.random().toString(36).substring(2, 9),
+            nome: 'Macelo',
+            tipo: 'aluno',
+            date: new Date()
+        },
+        {
+            id: Math.random().toString(36).substring(2, 9),
+            nome: 'Karol',
+            tipo: 'professor',
+            date: new Date()
+        },
+        {
+            id: Math.random().toString(36).substring(2, 9),
+            nome: 'Vinicius',
+            tipo: 'aluno',
+            date: new Date()
+        },
+        {
+            id: Math.random().toString(36).substring(2, 9),
+            nome: 'Felipe',
+            tipo: 'professor',
+            date: new Date()
+        },
+        {
+            id: Math.random().toString(36).substring(2, 9),
+            nome: 'Luan',
+            tipo: 'aluno',
+            date: new Date()
+        },
+
+    ];
     $scope.userInput = {
         name: '',
         tipo: ''
@@ -73,4 +105,5 @@ app.controller('schoolController', function($scope) {
         $scope.showUsersGeral = !$scope.showUsersGeral;
     }
 });
+
 

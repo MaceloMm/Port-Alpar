@@ -79,7 +79,7 @@
     <div class="showUsers" ng-if="showUsersGeral"> 
 
         <div class="title" >
-            <h2><span>"{{ users.length }}"</span>Usuarios Cadastrados!</h2>
+            <h2><span ng-bind="(users | filter: (filtro === 'todos' ? {} : {tipo: filtro})).length"></span>Usuarios Cadastrados!</h2>
             <select name="" id="" ng-model="filtro">
                 <option value="todos">Todos</option>
                 <option value="aluno">Aluno</option>
@@ -93,7 +93,7 @@
                     <p>Nome: 
                     <strong><span ng-bind="user.nome | uppercase"></strong></span> | 
                     Tipo: <span ng-bind="user.tipo"></span> | 
-                    Data de cadastro: <span ng-bind="user.date | date: 'dd/mm/yyyy'"></span></p>
+                    Data de cadastro: <span ng-bind="user.date | date: 'dd/MM/yyyy'"></span></p>
                 </div>
 
             </div>
