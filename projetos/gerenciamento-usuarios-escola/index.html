@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
-    <script src="assets/scripts/scripts.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <style>
         .material-symbols-outlined {
@@ -89,11 +88,17 @@
 
         <div class="allUsers">
             <div class="cards">
-                <div class="contentCard" ng-repeat="user in users | filter: (filtro === 'todos' ? {} : {tipo: filtro})">
-                    <p>Nome: 
-                    <strong><span ng-bind="user.nome | uppercase"></strong></span> | 
-                    Tipo: <span ng-bind="user.tipo"></span> | 
-                    Data de cadastro: <span ng-bind="user.date | date: 'dd/MM/yyyy'"></span></p>
+                <div class="contentCard">
+
+                    <div ng-repeat="user in users | filter: (filtro === 'todos' ? {} : {tipo: filtro})">
+                        Nome: <strong><span ng-bind="user.nome | uppercase"></strong></span> | 
+                        Tipo: <span ng-bind="user.tipo"></span> | 
+                        Cadastro: <span ng-bind="user.date | date: 'dd/MM/yyyy'"></span>
+                        <span class="icon material-symbols-outlined" ng-click="removeUser(user.id)">
+                            delete
+                        </span>
+                    </div>
+
                 </div>
 
             </div>
@@ -108,5 +113,11 @@
     
     <div class="port"><a href="../../">Portfolio</a></div>
 
+
+    <script>
+        window.app = angular.module("schoolSystem", []);
+    </script>
+    <script src="assets/scripts/school.service.js"></script>
+    <script src="assets/scripts/school.controller.js"></script>
 </body>
 </html>

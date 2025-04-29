@@ -1,14 +1,10 @@
-const app = angular.module('taskModule', []);
-
-app.controller('TaskController', function ($scope, $filter){
-
-    $scope.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+app.controller('TaskController', function ($scope, $filter, TaskService){
 
     $scope.taskInput = {
         title: '',
         date: '',
     }
-
+    $scope.tasks = TaskService.getTasks();
     $scope.showCompletedOnly = false;
     $scope.showIncompletedOnly = false;
     $scope.tasksForNow = false;
@@ -24,15 +20,8 @@ app.controller('TaskController', function ($scope, $filter){
             return
         };
 
-        console.log('estou aqui');
-        $scope.tasks.push({
-            id: Math.random().toString(36).substring(2, 9),
-            title: $scope.taskInput.title,
-            date: $scope.taskInput.date,
-            dateStr: $scope.taskInput.date.toLocaleDateString(),
-        });
-
-        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        TaskService.addTask($scope.taskInput.title, $scope.taskInput.date);
+        $scope.tasks = TaskService.getTasks();
 
         $scope.toggleModal();
         $scope.taskInput.date = '';
@@ -40,12 +29,13 @@ app.controller('TaskController', function ($scope, $filter){
     }
 
     $scope.toggleTask = () => {
-        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        TaskService.toogleCheck();
+        $scope.tasks = TaskService.getTasks();
     }
 
     $scope.deleteTask = (cTask) => {
-        $scope.tasks = $scope.tasks.filter((task) => task.id !== cTask.id)
-        localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+        TaskService.removeTask(cTask.id);
+        $scope.tasks = TaskService.getTasks();
     }
 
     $scope.filteredTasks = function(){
