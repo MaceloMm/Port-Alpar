@@ -15,6 +15,7 @@ window.app.controller('schoolController', function($scope, SchoolServices) {
 
     $scope.getUserData = () => {
         SchoolServices.addUsers($scope.userInput.name, $scope.userInput.tipo);
+        if ($scope.userInput === '' || $scope.userInput.tipo === ''){alert('Por favor preencher os campos!'); return;};
         $scope.users = SchoolServices.getUsers();
         alert(`Usuario ${$scope.userInput.name} cadastrado!`);
         $scope.userInput.name = '';
