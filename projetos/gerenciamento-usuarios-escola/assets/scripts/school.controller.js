@@ -4,6 +4,7 @@ window.app.controller('schoolController', function($scope, SchoolServices) {
     $scope.msgb = 'Bem-vindo ao sistema de cadastro escolar';
     $scope.toggleCadastro = false;
     $scope.filtro = 'todos';
+    $scope.btnVoltar = false;
     $scope.toggleCheckRegister = false;
     $scope.toggleUsersData = false;
     $scope.showUsersGeral = false;
@@ -23,11 +24,13 @@ window.app.controller('schoolController', function($scope, SchoolServices) {
     };
 
     $scope.showCadastroScreen = () => {
+        if (!$scope.btnVoltar){$scope.btnVoltar = true;};
         $scope.toggleCheckRegister = false;
         $scope.toggleUsersData = false;
         $scope.toggleCadastro = !$scope.toggleCadastro;
     }
     $scope.showSearchScreen = () => {
+        if (!$scope.btnVoltar){$scope.btnVoltar = true;}
         $scope.toggleCadastro = false;
         $scope.toggleUsersData = false;
         $scope.toggleCheckRegister = !$scope.toggleCheckRegister;
@@ -41,6 +44,7 @@ window.app.controller('schoolController', function($scope, SchoolServices) {
         $scope.toggleCadastro = false;
         $scope.toggleCheckRegister = false;
         $scope.toggleUsersData = false;
+        $scope.btnVoltar = false;
     }
     $scope.seachUser = () => {
 
