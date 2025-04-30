@@ -46,6 +46,9 @@ let users = [
     new Teacher('Felipe Felipe', 'Felipe@felipe.com', 'felipe123', 'Programação')
 ];
 
+/**
+ * 
+ */
 document.getElementById('btnLogin').addEventListener('click', () => {
     const emailInput = document.getElementById('email').value.trim();
     const passwordInput = document.getElementById('password').value.trim();

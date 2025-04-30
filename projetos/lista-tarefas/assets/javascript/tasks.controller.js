@@ -41,4 +41,13 @@ app.controller('TaskController', function ($scope, $filter, TaskService){
     $scope.filteredTasks = function(){
         return $filter('filter')($scope.tasks, $scope.showCompletedOnly ? {checked: true} : {})
     }
+
+    $scope.validate = function(error, touched){
+        if (Object.values(error).length === 0 || !touched){
+            return {};
+        }else if (Object.values(error).reduce((acc, cur) => acc && cur, true)){
+            return {'border-color': 'red'};
+        }
+    };
+
 });

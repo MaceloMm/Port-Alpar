@@ -20,34 +20,53 @@
 <body ng-controller="schoolController">
 
     <div class="container" ng-if="!showUsersGeral">
-        <div class="title" >
+        <div class="title">
             <h2 ng-bind="msgb"></h2>
         </div>
 
         <div class="cadastro" ng-if="toggleCadastro">
-            <form action="">
+            <form action="" name="cadastroForm">
                 <label>
                     <span>Nome:</span>
-                    <input type="text" ng-model="userInput.name">
+                    <input type="text" 
+                    name="nameInput"
+                    ng-required="true"
+                    ng-minlength="1"
+                    ng-style="{'border-color': !cadastroForm.nameInput.$valid && cadastroForm.nameInput.$touched ? 'red' : ''}"
+                    ng-model="userInput.name">
+                </label>
+                <label>
+                    <span>Email:</span>
+                    <input type="email" 
+                    name="emailInput"
+                    ng-required="true"
+                    ng-style="{'border-color': !cadastroForm.emailInput.$valid && cadastroForm.emailInput.$touched ? 'red' : ''}"
+                    ng-model="userInput.email">
                 </label>
                 <label>
                     <span>Tipo:</span>
-                    <select name="" id="" ng-model="userInput.tipo">
+                    <select name="tipoInput" id="" ng-model="userInput.tipo"
+                    ng-required="true"
+                    ng-style="{'border-color': (!cadastroForm.tipoInput.$valid && cadastroForm.tipoInput.$touched) || cadastroForm.tipoInput.value === ''  ? 'red' : ''}"
+                    >
                         <option value="aluno">Aluno</option>
                         <option value="professor">professor</option>
                     </select>
                 </label>
-                <button type="button" ng-click="getUserData()">Enviar</button>
+                <button type="button" ng-click="getUserData(cadastroForm)" ng-disabled="!cadastroForm.$valid">Enviar</button>
             </form>
         </div>
 
         <div class="checkRegister" ng-if="toggleCheckRegister">
-            <form action="">
+            <form action="" name="checkForm">
                 <label>
                     <span>Digite o nome:</span>
-                    <input type="text" ng-model="seachName.name">
+                    <input type="text" ng-model="seachName.name"
+                    name="nameCheck"
+                    ng-required="true"
+                    ng-style="{'border-color': !checkForm.nameCheck.$valid && checkForm.nameCheck.$touched ? 'red' : ''}">
                 </label>
-                <button type="button" ng-click="seachUser()">Enviar</button>
+                <button type="button" ng-click="seachUser(checkRegister)" ng-disabled="!checkForm.$valid">Enviar</button>
             </form>
         </div>
 
@@ -59,19 +78,9 @@
             </div>
         </div>
 
-        <div class="options">
-            <button type="button" ng-click="showCadastroScreen()">
-                Cadastrar
-            </button>
-            <button type="button" ng-click="showSearchScreen()">
-                Verificar Cadastro
-            </button>
-            <button type="button" ng-click="showAllUsers()">
-                Todos os usuarios
-            </button>
-            <button type="button" ng-click="hideAll()" ng-if="btnVoltar">
-                Voltar
-            </button>
+        <div class="loading" ng-if="waitLoad">
+            <div class="spin">
+            </div>
         </div>
     </div>
 
@@ -104,11 +113,21 @@
             </div>
         </div>
 
-        <div class="options">
-            <button type="button" ng-click="showAllUsers()">
-                Voltar
-            </button>
-        </div>
+    </div>
+
+    <div class="options">
+        <button type="button" ng-click="showCadastroScreen()">
+            Cadastrar
+        </button>
+        <button type="button" ng-click="showSearchScreen()">
+            Verificar Cadastro
+        </button>
+        <button type="button" ng-click="showAllUsers()">
+            Todos os usuarios
+        </button>
+        <button type="button" ng-click="hideAll()" ng-if="btnVoltar">
+            Voltar
+        </button>
     </div>
     
     <div class="port"><a href="../../">Portfolio</a></div>

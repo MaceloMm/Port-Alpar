@@ -284,6 +284,11 @@ button{
             justify-self: center;
             text-align: center;
             margin-top: 0.8rem;
+            color: var(--light-color);
+        }
+
+        .send:disabled{
+            opacity: .5;
         }
 
         h2{

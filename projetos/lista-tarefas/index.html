@@ -83,16 +83,25 @@
                 </span>
             </button>
             <h2>Adicionar uma Tarefa</h2>
-            <form action="" ng-submit="handleSubmitAddTask()">
+            <form action="" name="form" ng-submit="handleSubmitAddTask()">
                 <label>
                     <p>Nome</p>
-                    <input type="text" placeholder="Nome da Tarefa" ng-model="taskInput.title">
+                    <input type="text" 
+                    placeholder="Nome da Tarefa" 
+                    ng-model="taskInput.title" 
+                    ng-required="true" 
+                    ng-style="validate(form.title.$error, form.title.$touched)" 
+                    name="title">
                 </label>
                 <label>
                     <p>Data</p>
-                    <input type="date" ng-model="taskInput.date">
+                    <input type="date" 
+                    name="date"
+                    ng-model="taskInput.date"
+                    ng-required="true" 
+                    ng-style="validate(form.date.$error, form.date.$touched)">
                 </label>
-                <button class="send" type="submit">Adicionar</button>
+                <button class="send" type="submit" ng-disabled="!form.$valid">Adicionar</button>
             </form>
         </div>
     </aside>
