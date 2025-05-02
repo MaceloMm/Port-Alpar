@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  background: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  font-family: Inter, Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  max-width: 30rem;
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+  background-color: rgba(15, 14, 14, 0.497);
+  box-shadow: rgba(194, 191, 191, 0.858);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 0.1rem solid rgba(22, 22, 22, 0.608);
+  gap: 0.8rem;
+  color: white;
+
+  .cidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 4.8rem;
+  }
+
+  .icon {
+    width: 12.8rem;
+    height: 12.8rem;
+    margin: 0 auto;
+  }
+
+  .min-max {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  .temp-sense {
+    text-align: center;
+  }
+
+  .humidity {
+    text-align: center;
+  }
+
+  .foto {
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 2.4rem;
+      background-color: aliceblue;
+      padding: 0.4rem;
+      border-radius: 50%;
+      height: 2.4rem;
+      object-fit: contain;
+    }
+  }
+}
+
+
+.input {
+  display: flex;
+  margin-top: 1.6rem;
+  gap: 0.8rem;
+  width: 90%;
+  max-width: 30rem;
+
+  input {
+    flex: 1;
+    display: block;
+    width: 100%;
+    background-color: rgba(15, 14, 14, 0.497);
+    box-shadow: rgba(194, 191, 191, 0.858);
+    border: 0.1rem solid rgba(22, 22, 22, 0.608);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: aliceblue;
+    padding: 1.6rem;
+    border-radius: 1.6rem 0 0 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  button {
+    display: block;
+    width: fit-content;
+    background-color: rgba(15, 14, 14, 0.497);
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    border: 0;
+    border-radius: 0 1.6rem 1.6rem 0;
+    color: aliceblue;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+.input input::placeholder {
+  color: aliceblue;
+  opacity: 0.8;
+}
+
+.input button:hover {
+  background-color: rgba(255, 255, 255, 0.381);
+  color: black;
+}
