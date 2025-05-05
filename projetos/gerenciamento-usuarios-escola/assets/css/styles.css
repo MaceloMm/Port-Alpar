@@ -20,7 +20,7 @@
     --text-primary: #FFFFFF;
     --text-secondary: #B0B0B0;
     --border-color: #333333;
-    --glow-color: rgba(99, 102, 241, 0.4); /* Efeito de brilho */
+    --glow-color: rgba(99, 102, 241, 0.4); 
 }
 
 ::-webkit-scrollbar{

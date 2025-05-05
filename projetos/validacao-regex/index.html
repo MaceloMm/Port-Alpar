@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="validationSystem">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="validationController">
+
+    <main class="container">
+        <form action="">
+            <div class="title">
+                <h1>Verificação de formatação</h1>
+            </div>
+            <label>
+                <p>Nome:</p>
+                <input type="text" name="name" placeholder="Example...." ng-model="name">
+                <div ng-if="invalid.name" class="alert">
+                    Nome invalido!
+                </div>
+            </label>
+            <label for="">
+                <p>Email:</p>
+                <input type="email" name="email" placeholder="example@example.com" ng-model="email">
+                <div ng-if="invalid.email" class="alert">
+                    Email invalido!
+                </div>
+            </label>
+            <label for="">
+                <p>CPF:</p>
+                <input type="text" name="cpf" placeholder="000.000.000-00" ng-model="cpf">
+                <div ng-if="invalid.cpf" class="alert">
+                    Cpf invalido!
+                </div>
+            </label>
+            <div class="buttons">
+                <button type="button" ng-click="logName()">
+                    Verificar
+                </button>
+                <button type="reset" ng-click="resetBtn()">
+                    Resetar
+                </button>
+            </div>
+            <div class="alertModal" ng-if="showMessage">
+                <p>Valido!</p>
+            </div>
+        </form>
+
+    </main>
+    <script src="assets/javascript/validation.controller.js"></script>
+
+</body>
+
+</html>

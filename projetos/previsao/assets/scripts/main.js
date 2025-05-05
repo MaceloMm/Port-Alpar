@@ -1,9 +1,8 @@
 const app = angular.module('weatherAPP', []);
-const apiKey = "";
+const apiKey = "52c34bb1fec8a47fe2676ce765d114b5";
 const lang = "pt_br";
 const units = "metric";
 
-// sadsa 52c34bb1fec8a47fe2676ce765d114b5
 
 app.controller('WeatherController', function ($scope, $http) {
     $scope.cityName = '';
